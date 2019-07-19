@@ -1,12 +1,14 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BsDropdownModule, TabsModule } from "ngx-bootstrap";
 import { RouterModule } from "@angular/router";
 import { NgxGalleryModule } from "ngx-gallery";
 import { JwtModule } from "@auth0/angular-jwt";
 import { FileUploadModule } from "ng2-file-upload";
+import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -53,12 +55,15 @@ export function tokenGetter() {
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     NgxGalleryModule,
     FileUploadModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
